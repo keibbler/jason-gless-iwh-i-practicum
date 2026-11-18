@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1= title
+
+    a(href="/") Return to the homepage
+
+    if error
+      p.error= error
+
+    form(method="POST", action="/update-cobj")
+      label(for="name") Name
+      input#name(type="text", name="name", required=true)
+
+      label(for="species") Species
+      input#species(type="text", name="species", required=true)
+
+      label(for="car_notes") Car Notes
+      textarea#car_notes(name="car_notes", required=true)
+
+      button(type="submit") Create Garden Plant
