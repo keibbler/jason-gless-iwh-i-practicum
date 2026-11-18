@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1= title
+    a(href="/update-cobj") Add to this table
+
+    if error
+      p.error= error
+
+    if records && records.length
+      table
+        thead
+          tr
+            th Name
+            th Species
+            th Car Notes
+        tbody
+          each record in records
+            tr
+              td= record.properties.name
+              td= record.properties.species
+              td= record.properties.car_notes
+    else
+      p No Garden Plant records were found.
